@@ -19,7 +19,6 @@ class Lightning {
     this.ctx = ctx;
     this.positions.push(coordinate);
 
-    // console.log(this.direction * (180 / Math.PI));
   }
   getRandomDirection() {
     return random(0, 3) * ((2 * Math.PI) / 4);
