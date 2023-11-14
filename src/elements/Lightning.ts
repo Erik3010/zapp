@@ -12,7 +12,6 @@ class Lightning {
   alpha = 1000;
   maxStrokeWidth = random(1, 2);
   strokeWidth = this.maxStrokeWidth;
-
   // step: number = random(5, 40);
 
   constructor({ ctx, coordinate }: LightningOption) {
