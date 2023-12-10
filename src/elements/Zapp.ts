@@ -34,7 +34,7 @@ class Zapp {
     this.drawLightning();
   }
   drawLightning() {
-    for (const [index, lightning] of this.lightnings.entries()) {
+    for (const [_, lightning] of this.lightnings.entries()) {
       lightning.draw();
 
       // if (lightning.isDead) {
