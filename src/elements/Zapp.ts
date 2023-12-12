@@ -12,7 +12,6 @@ class Zapp {
     this.ctx = this.canvas.getContext("2d")!;
 
     this.lightnings = [];
-    // this.lightningCount = 1;
     this.lightningCount = 30;
 
     this.registerEventListener();
@@ -34,12 +33,12 @@ class Zapp {
     this.drawLightning();
   }
   drawLightning() {
-    for (const [_, lightning] of this.lightnings.entries()) {
+    for (const [index, lightning] of this.lightnings.entries()) {
       lightning.draw();
 
-      // if (lightning.isDead) {
-      //   this.lightnings.splice(index, 1);
-      // }
+      if (lightning.isDead) {
+        this.lightnings.splice(index, 1);
+      }
     }
   }
   drawBackground() {
