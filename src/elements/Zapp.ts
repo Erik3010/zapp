@@ -43,7 +43,7 @@ class Zapp {
   }
   drawBackground() {
     this.ctx.beginPath();
-    this.ctx.fillStyle = "#000";
+    this.ctx.fillStyle = "#fff";
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     this.ctx.closePath();
   }

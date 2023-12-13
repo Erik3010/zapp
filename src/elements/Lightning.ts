@@ -1,18 +1,19 @@
 import { Coordinate, LightningOption } from "../types";
 import { map, random, clamp } from "../utility";
+import { COLORS } from "../constants";
 
 class Lightning {
   ctx: CanvasRenderingContext2D;
   positions: Coordinate[] = [];
   direction: number = this.getRandomDirection();
-  step = 15;
   lineLength = 50;
-  maxLife = random(80, 150);
+  maxLife = random(100, 250);
   life = this.maxLife;
   alpha = 1000;
   maxStrokeWidth = random(1, 2);
   strokeWidth = this.maxStrokeWidth;
-  // step: number = random(5, 40);
+  step: number = random(10, 30);
+  color = COLORS[random(0, COLORS.length - 1)]
 
   constructor({ ctx, coordinate }: LightningOption) {
     this.ctx = ctx;
@@ -32,7 +33,7 @@ class Lightning {
       else this.ctx.lineTo(position.x, position.y);
     }
 
-    this.ctx.strokeStyle = "#fff";
+    this.ctx.strokeStyle = this.color;
     this.ctx.lineWidth = this.strokeWidth;
     this.ctx.stroke();
     this.ctx.closePath();
