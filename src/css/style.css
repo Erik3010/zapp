@@ -7,13 +7,12 @@
 }
 
 html,
-body {
+body,
+#app {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
-}
-
-canvas {
-  border: 1px solid #000;
+  min-height: 100%;
+  width: 100%;
 }
